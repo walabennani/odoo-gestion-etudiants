@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+gestion_etudiant_access,gestion.etudiant,model_gestion_etudiant,,1,1,1,1
+gestion_classe_access,gestion.classe,model_gestion_classe,,1,1,1,1
+gestion_note_access,gestion.note,model_gestion_note,,1,1,1,1

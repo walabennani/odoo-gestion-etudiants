@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ACTION -->
+    <record id="action_notes" model="ir.actions.act_window">
+        <field name="name">Notes</field>
+        <field name="res_model">gestion.note</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_notes"
+              name="Notes"
+              parent="menu_gestion_root"
+              action="action_notes"
+              sequence="4"/>
+
+    <!-- KANBAN VIEW -->
+    <record id="view_note_kanban" model="ir.ui.view">
+        <field name="name">gestion.note.kanban</field>
+        <field name="model">gestion.note</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click card p-3 shadow bg-light rounded" >
+                            <strong>Matière: <field name="matiere"/></strong>
+                            <div>Note: <field name="note"/></div>
+                            <div>Étudiant: <field name="etudiant_id"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- TREE VIEW -->
+    <record id="view_note_tree" model="ir.ui.view">
+        <field name="name">gestion.note.tree</field>
+        <field name="model">gestion.note</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="matiere"/>
+                <field name="note"/>
+                <field name="etudiant_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_note_form" model="ir.ui.view">
+        <field name="name">gestion.note.form</field>
+        <field name="model">gestion.note</field>
+        <field name="arch" type="xml">
+            <form string="Note">
+                <sheet class="p-3">
+                    <group>
+                        <field name="matiere"/>
+                        <field name="note"/>
+                        <field name="etudiant_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

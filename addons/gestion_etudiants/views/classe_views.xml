@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ACTION -->
+    <record id="action_classes" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">gestion.classe</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!-- MENU -->
+    <menuitem id="menu_classes"
+              name="Classes"
+              parent="menu_gestion_root"
+              action="action_classes"
+              sequence="3"/>
+
+    <!-- KANBAN VIEW -->
+    <!-- KANBAN VIEW -->
+<record id="view_classe_kanban" model="ir.ui.view">
+    <field name="name">gestion.classe.kanban</field>
+    <field name="model">gestion.classe</field>
+    <field name="arch" type="xml">
+        <kanban class="o_kanban_small_column">
+        <field name="etudiant_id"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click card p-3 shadow bg-light rounded">
+                        <strong class="text-success"><field name="name"/></strong>
+                        <div>Niveau: <field name="niveau"/></div>
+                        <div>
+                            <span class="badge bg-info">
+    <t t-esc="record.etudiant_id.raw_value.length"/>
+</span> Étudiants
+
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+
+    <!-- TREE VIEW -->
+    <record id="view_classe_tree" model="ir.ui.view">
+        <field name="name">gestion.classe.tree</field>
+        <field name="model">gestion.classe</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="niveau"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- FORM VIEW -->
+    <record id="view_classe_form" model="ir.ui.view">
+        <field name="name">gestion.classe.form</field>
+        <field name="model">gestion.classe</field>
+        <field name="arch" type="xml">
+            <form string="Classe">
+                <sheet class="p-3">
+                    <group>
+                        <field name="name"/>
+                        <field name="niveau"/>
+                    </group>
+                    <notebook>
+                        <page string="Étudiants">
+                            <field name="etudiant_id">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

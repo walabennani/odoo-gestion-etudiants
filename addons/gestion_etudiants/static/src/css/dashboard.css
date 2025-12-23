@@ -1,0 +1,32 @@
+.o_dashboard_container {
+    padding: 10px;           /* reduce overall padding */
+    max-width: 1200px;       /* optional: limit width */
+    margin: 0 auto;          /* center dashboard */
+}
+
+.card {
+    border-radius: 10px;
+    margin-bottom: 15px;     /* smaller spacing between cards */
+    text-align: center;
+}
+
+.card h4 {
+    font-weight: bold;
+    font-size: 16px;         /* smaller header */
+}
+
+.card .card-body {
+    padding: 10px;           /* reduce card padding */
+    font-size: 14px;         /* reduce text size */
+}
+
+/* Color variants */
+.card-primary { background-color: #4e73df; color: #000; }
+.card-success { background-color: #1cc88a; color: #000; }
+.card-warning { background-color: #f6c23e; color: #000; }
+.card-danger  { background-color: #e74a3b; color: #000; }
+
+/* Chart container */
+#class-chart {
+    height: 200px;           /* smaller chart height */
+}

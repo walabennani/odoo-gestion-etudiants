@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="gestion_etudiants.Dashboard">
+        <div class="o_dashboard_container">
+            <h2>📊 Dashboard – Gestion Étudiants</h2>
+
+            <div class="row mt16">
+                <div class="col-md-3">
+                    <div class="card card-primary shadow">
+                        <div class="card-body">
+                            <h4>Total Étudiants</h4>
+                            <span t-esc="state.students"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-success shadow">
+                        <div class="card-body">
+                            <h4>Total Classes</h4>
+                            <span t-esc="state.classes"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-warning shadow">
+                        <div class="card-body">
+                            <h4>Total Notes</h4>
+                            <span t-esc="state.notes"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-danger shadow">
+                        <div class="card-body">
+                            <h4>Moyenne Notes</h4>
+                            <span t-esc="state.average"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt16">
+                <div class="col-md-12">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h4>Moyenne des Notes par Classe</h4>
+                            <canvas id="class-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
